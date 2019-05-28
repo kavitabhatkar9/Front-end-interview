@@ -1,0 +1,502 @@
+@import 'config/**/*.scss';
+* {
+  box-sizing: border-box;
+} 
+
+.company {
+  padding: 10px;
+
+  &__header {
+    background-color: black;
+    
+    &__navs {
+      display: flex;
+      color: rgba(255, 255, 255, 0.788);
+      padding: 10px;    
+
+      &__nav1 {
+        flex-grow:5;
+
+        &__part2 {
+        color: red;
+        }
+      }
+
+      &__nav2 {
+        color: white;
+      }
+    }
+
+    &__navs div {
+      padding: 5px;
+    }
+  }
+
+  &__graphic{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+      filter: brightness(40%);
+    }
+   
+    &__over {
+      position: absolute;
+      align-items: center;
+
+      &__text {
+        font-size: 30px;
+        color: white;
+      }
+
+      &__donuts {
+
+        &__container {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          
+          &__child {
+            display: flex;
+            flex-flow: column wrap;
+            padding: 30px;
+            border: 0.5px solid dimgrey;
+            margin: 0 10px;
+          }
+
+          &__child img{
+            width: 100px;
+          }
+        }
+
+        &__container div[class~=company__graphic__over__donuts__container__child] div:nth-child(2) {
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-flow: row wrap;
+    margin:20px;
+    justify-content: space-around;
+
+    &__desc {
+      flex:0.5;
+    }
+  }
+
+  &__about img {
+    max-width: 100%;
+  }
+
+  &__testimonals {
+    background-color: #f1eeee;
+    padding: 20px;
+
+    &__reviews {
+      display:flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+
+      &__main {
+        padding: 10px;
+        margin: 0 5px;
+        flex: 0.25;
+        
+        &__desc {
+          padding: 25px;
+          background-color: white;
+          box-shadow: 2px 2px 2px grey;
+          margin-bottom: 10px;
+          border-radius: 20px;
+        }
+
+        &__client {
+          display: flex;
+          align-self: center;
+          padding: 10px 0 0 20px;
+
+          &__pict {
+            margin-right: 10px;
+          }
+
+          &__pict img {
+            border-radius: 20px;
+            border: 1px solid darkgrey;
+            padding: 5px;
+          }
+        }
+      }
+    }
+
+    &__header {
+      text-align: center;
+    }
+  }
+
+  &__workwithus {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    &__graphic {
+      filter: brightness(40%);
+    }
+
+    &__details {
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-flow: column wrap;
+
+      &__header {
+        color: white;
+      }
+
+      &__header div {
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      &__secheader {
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      &__secheader div{
+        margin: 10px 0;
+      }
+
+      &__form {
+
+        &__fields{
+          margin: 10px 0;
+        }
+
+        &__fields input{
+         padding: 5px;
+         border-radius: 4px;
+         border: none;
+        }
+
+        &__message {
+          margin: 10px 0;          
+        }
+
+        &__message textarea {
+          padding: 5px;
+          border-radius: 4px;
+          border: none;
+        }
+
+        &__submit {
+          display: flex;
+          justify-content: center;
+        }
+
+        &__submit button {
+          background-color: #ff4242;
+          border: 1px solid #ff4242;
+          padding: 5px 20px;
+          border-radius: 15px;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    padding: 15px;
+    color: white;
+    background-color: black;
+
+    &__icons img {
+      width: 20px;
+      margin: 2px;
+    }
+
+    &__iconcont {
+      display: flex;
+      align-items: center;
+    }
+
+    &__iconcont div:nth-child(1){
+      margin-right: 5px;
+    }
+  }
+
+  &__footer div:nth-child(1){
+    flex: 0.95;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .company {
+    padding: 5px;
+
+    &__header {
+      background-color: black;
+      
+      &__navs {
+        display: flex;
+        color: rgba(255, 255, 255, 0.788);
+        padding: 5px;    
+  
+        &__nav1 {
+          flex-grow:5;
+          text-align: center;
+  
+          &__part2 {
+          color: red;
+          }
+        }
+  
+        &__nav2 {
+          color: white;
+        }
+      }
+  
+      &__navs div:not(:first-child) {
+        display:none;
+       }
+    }
+  
+    &__graphic{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      &__image {
+        filter: brightness(40%);
+      }
+
+      &__image img {
+        object-fit: cover;
+        width: 350px;
+        height: 400px;
+      }
+     
+      &__over {
+        position: absolute;
+        align-items: center;
+        padding:0 10px;
+  
+        &__text {
+          font-size: 15px;
+          color: white;
+          padding: 0 10px;
+          text-align: center;
+        }
+    
+        &__donuts {
+  
+          &__container {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            padding: 0 20px;
+            
+            &__child {
+              display: flex;
+              flex-flow: row wrap;
+              padding: 15px;
+              border: 0.5px solid dimgrey;
+              margin: 5px 0;
+            }
+  
+            &__child img{
+              width: 20px;
+              margin-right:10px;
+            }
+          }
+  
+          &__container div[class~=company__graphic__over__donuts__container__child] div:nth-child(2) {
+            color: white;
+          }
+        }
+      }
+    }
+  
+    &__about {
+      display: flex;
+      flex-flow: row wrap;
+      margin:10px;
+      justify-content: space-around;
+  
+      &__desc {
+        flex:0.5;
+      }
+    }
+  
+    &__about img {
+      object-fit: cover;
+      width: 350px;
+      height: 300px;
+    }
+  
+    &__testimonals {
+      background-color: #f1eeee;
+      padding: 10px;
+  
+      &__reviews {
+        display:flex;
+        justify-content: space-evenly;
+        flex-flow: column wrap;
+  
+        &__main {
+          padding: 5px;
+          margin: 0 2.5px;
+          flex: 0.25;
+          
+          &__desc {
+            padding: 12px;
+            background-color: white;
+            box-shadow: 2px 2px 2px grey;
+            margin-bottom: 5px;
+            border-radius: 10px;
+          }
+  
+          &__client {
+            display: flex;
+            align-self: center;
+            padding: 5px 0 0 10px;
+  
+            &__pict {
+              margin-right: 5px;
+            }
+  
+            &__pict img {
+              border-radius: 10px;
+              border: 1px solid darkgrey;
+              padding: 2.5px;
+            }
+          }
+        }
+      }
+  
+      &__header {
+        text-align: center;
+      }
+    }
+  
+    &__workwithus {
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+  
+      &__graphic {
+        filter: brightness(40%);
+      }
+
+      &__graphic img{
+        width: 350px;
+        height: 500px;
+        object-fit: cover;
+      }
+  
+      &__details {
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-flow: column wrap;
+  
+        &__header {
+          color: white;
+          padding: 10px;
+          text-align: center;
+        }
+  
+        &__header div {
+          font-size: 20px;
+          font-weight: bold;
+        }
+    
+        &__secheader {
+          color: white;
+          margin-bottom: 10px;
+        }
+  
+        &__secheader div{
+          margin: 5px 0;
+          text-align: center;
+        }
+  
+        &__form {
+  
+          &__fields{
+            margin: 5px 0;
+            padding:0 10px;
+            align-items: center;
+            display: flex;
+            flex-flow: column wrap;
+          }
+  
+          &__fields input{
+           padding: 2.5px;
+           border-radius: 2px;
+           border: none;
+           margin: 5px;
+          }
+  
+          &__message {
+            margin: 0 10px;          
+          }
+  
+          &__message textarea {
+            padding: 2.5px;
+            border-radius: 2px;
+            border: none;
+            margin: 5px;
+          }
+  
+          &__submit {
+            display: flex;
+            justify-content: center;
+          }
+  
+          &__submit button {
+            background-color: #ff4242;
+            border: 1px solid #ff4242;
+            padding: 2.5px 10px;
+            border-radius: 7px;
+          }
+        }
+      }
+    }
+  
+    &__footer {
+      display: flex;
+      flex-flow: column wrap;
+      padding: 7px;
+      color: white;
+      background-color: black;
+  
+      &__icons img {
+        width: 10px;
+        margin: 1px;
+      }
+  
+      &__iconcont {
+        display: flex;
+        align-items: center;
+      }
+  
+      &__iconcont div:nth-child(1){
+        margin-right: 2.5px;
+      }
+    }
+  
+    &__footer div:nth-child(1){
+      flex: 0.95;
+    }
+  }  
+}
